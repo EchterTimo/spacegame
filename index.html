@@ -126,8 +126,8 @@
             ctx.fillRect(x, y, barWidth * (p.shield / maxShield), barHeight);
             ctx.globalAlpha = 1;
             ctx.fillStyle = "#00f";
-            ctx.textAlign = "";
-            ctx.fillText(`${p.shield}/${maxShield}`, x + barWidth + 6, y + barHeight);
+            ctx.textAlign = "left";
+            ctx.fillText(`${p.shield}/${maxShield}`, x + barWidth + 18, y + barHeight);
 
             // HP bar (red)
             ctx.strokeStyle = "#f00";
@@ -137,8 +137,8 @@
             ctx.fillRect(x, y + barHeight + barSpacing, barWidth * (p.hp / maxHP), barHeight);
             ctx.globalAlpha = 1;
             ctx.fillStyle = "#f00";
-            ctx.textAlign = "";
-            ctx.fillText(`${p.hp}/${maxHP}`, x + barWidth + 6, y + barHeight + barSpacing + barHeight);
+            ctx.textAlign = "left";
+            ctx.fillText(`${p.hp}/${maxHP}`, x + barWidth + 18, y + barHeight + barSpacing + barHeight);
 
             ctx.restore();
         }
@@ -196,8 +196,8 @@
         // 6. World wrap für Spieler ENTFERNT, stattdessen Begrenzung:
         function updatePlayer(p) {
             if (!p.alive) return;
-            if (keys[p.controls.left]) p.angle -= 0.05;
-            if (keys[p.controls.right]) p.angle += 0.05;
+            if (keys[p.controls.left]) p.angle -= 0.025;
+            if (keys[p.controls.right]) p.angle += 0.025;
             if (keys[p.controls.up]) {
                 p.vx += Math.cos(p.angle) * 0.1;
                 p.vy += Math.sin(p.angle) * 0.1;
